@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QnA</title>
+    <link rel="stylesheet" href="/icon/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="/css/main.css">
+    
+</head>
+<body>
+    <!-- header start -->
+    <header class="header">
+        <nav class="header__nav">
+       <div class="header__nav--logo"> <!-- header logo -->
+           {{!-- <img src="/images/html/logo.png" alt="brand" class="header__nav--logo-image"> --}}
+           <div class="main-logo-container"><h1>QNA</h1></div>
+       </div>
+       <div class="quotes">
+           {{!-- <p>QNA</p>
+           <h1>Ask Any Academic Related Question</h1> --}}
+       </div>
+       <a href="#" class="btn header__nav--register-btn" id="register__btn">Sign In</a>
+    </nav>
+       <div class="main__form"><!-- main-login and signup form -->
+        <div class="main__form--login"><!-- login-form -->
+           
+            <form action="/user/login" method="post" class="main__form--login-form">
+                <div class="main__form--login-heading">
+                <h1 >LOGIN</h1><!-- login ko heading -->
+            </div>
+
+            <div class="username"><!-- email box -->
+                <label for="username" class="username__label">Email</label><!-- username label -->
+                <input type="email" class="username__input" id="username" name="email" placeholder="Email.." autocomplete="off"  required><!--email input -->
+            </div>
+            <div class="password"><!-- password box -->
+                <label for="password" class="password__label">Password</label><!--password label -->
+                <input type="password" class="password__input" id="password" name="password" placeholder="Password..."  required><!--password input -->
+            </div>
+            <div class="login">
+                <input type="submit" class="btn login__button" value="LOGIN">
+               <span class="login__detail">Don't have an account?<a href="#" class="login__detail-register" id="register__btn">register</a></span>
+               
+            </div>
+          
+            </form>
+        </div>
+
+        
+        <div class="main__form--signup"><!-- signup-form -->
+            <form action="/users" class="main__form--signup-form" method="post">
+                <div class="main__form--signup-heading">
+                    <h1>SIGNUP</h1><!-- signUP ko heading -->
+                </div>
+                 <div class="signUpUserName"><!-- signUP username box -->
+                    <label for="username" class="signUpUserName__label">UserName</label><!-- signUP username label -->
+                    <input type="text" class="signUpUserName__input" name="username" id="username" required autocomplete="off" ><!-- signUP username input -->
+                </div>
+                <div class="signUpFirstName"><!-- signUP firstname box -->
+                    <label for="firstName" class="signUpFirstName__label">First Name</label><!-- signUP firstName label -->
+                    <input type="text" class="signUpFirstName__input" name="firstName" id="firstName" required autocomplete="off"><!-- signUP firstName input -->
+                </div>
+                <div class="signUpLastName"><!-- signUP lastname box -->
+                    <label for="lastname" class="signUpLastName__label">Last Name</label><!-- signUP lastname label -->
+                    <input type="text" class="signUpLastName__input" name="lastName" id="lastname" required autocomplete="off" ><!-- signUP lastname input -->
+                </div>
+               
+                <div class="signUpEmail"><!-- signUP email box -->
+                    <label for="email" class="signUpEmail__label">Email</label><!-- signUP email label -->
+                    <input type="text" class="signUpEmail__input" id="email" name="email" required autocomplete="off"><!-- signUP email input -->
+                </div>
+                <div class="signUpPassword"><!-- signUP password box -->
+                    <label for="password" class="signUpPassword__label">password</label><!-- signUP password label -->
+                    <input type="password" class="signUpPassword__input" name="password" id="password" required autocomplete="off"><!-- signUP password input -->
+                </div>
+                     <div class="singUpFaculty"><!-- signUP password box -->
+                    <label for="password" class="signUpFaculty__label">faculty</label><!-- signUP password label -->
+                        <select name="faculty" id="" class="signupFaculty__input">
+                              {{#each faculty}}
+                            <option value="{{this.name}}">{{this.name}}</option>
+                             {{/each}}
+                        </select>
+                        </div>
+                <div class="signup">
+                    <button type="submit" class="btn signup__button">SignUp</button>
+                   <span class="signup__detail">Already have an account?<a href="#" class="signup__detail-register" id="register__btn">Login</a></span>
+                   
+                </div>
+            </form>
+        </div>
+       </div>
+    </header>
+
+            <!------------------------------------header end---------------------------------->
+
+<!-----------------------------------javascript code ------------------->
+<script src="/js/index.js"></script>
+</body>
+<!-------------------body end------------------>
+</html>

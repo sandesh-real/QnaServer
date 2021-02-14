@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../icon/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/shared.css">
+    
+   
+    <link rel="stylesheet" href="/css/viewAnswer/style.css">
+    <title>ViewAnswer</title>
+</head>
+<body>
+   
+
+         <header class="header-section">
+                    <!---------------------------quesiton pupof menu_--------------------- -->
+            
+                 
+                  <!-- other website content -->
+                  <!-- navigaiton menu top browser -->
+                  <div class="nav-info">
+                              <!---------------------------logo or brand_--------------------- -->
+            
+                  {{!-- <div class="main-logo-container"><a href="../"><img src="/images/html/logo.png" alt="QnA-logo"></a></div> --}}
+                  {{!-- <div class="main-logo-container"><a href="../"><h1 style="font-size:3rem">QNA</h1></a></div> --}}
+                  <div class="main-logo-container"><a href="../" style="text-decoration:none"><h1 style="font-size:3rem;text-decoration:none">QNA</h1></a></div>
+            
+                         <!---------------------------nav bar ko buttons--------------------- -->
+            
+                  <div class="btn-search-collection">
+                            
+            
+                     
+                     <!---------------------------question search input_--------------------- -->
+                   <div class="search-box-container">
+                     <form action="/test" method="get" class="searchForm">
+                      <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                      <input type="text" name="search" placeholder='search' id="{{this.token}}"  autocomplete="off" class="question-search-box">
+                     
+                      </form>
+                      <div class="searchOutput">
+                          <ul class="searchOutput_lists">
+                          </ul>
+                      </div>
+                      </div>
+                              <!---------------------------add question btn_--------------------- -->
+                        <div class="addquestion-Btn-Container">      
+                      <a href="#" class="Add-question-button" id="addQuestionBtn">Add Question<i class="fa fa-plus" aria-hidden="true"></i></a>
+                      </div>
+            
+                              <!---------------------------responsive nav ko button start--------------------- -->
+                      <div class="small-nav">
+                          <div class="small-internal">
+                          <div class="bar1"></div>
+                          <div class="bar2"></div>
+                          <div class="bar3"></div>
+                      </div>
+                   
+                      </div>
+                <!---------------------------responsive nav ko button end--------------------- -->
+            
+                  </div>
+                 
+            </div>
+            <div class="nav-container">
+            <!---------------------------navigation start--------------------- -->
+            
+            
+           
+            <nav class="main-navs">
+            
+              <ul class="main__nav--lists">
+                  <li class="main__nav--list" ><a href="../sub-main{{token}}" id="select"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                  <li class="main__nav--list" ><a href="../navExplore/notifications/{{token }}" id="{{token}}" class="menu-red"><i class="fa fa-bell notification__icon" aria-hidden="true" id="bell-notification"></i>Notification</a></li>
+                  <li class="main__nav--list"><a href="../navExplore/profiles/{{token }}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                  <li class="main__nav--list Logout"  id="more-option"><i class="fa fa-caret-down" id="moreoption" aria-hidden="true"></i>
+                  <div class="moreOption-list" >
+                <a href="/user/logout/{{token }}">Logout</a>
+            
+                  </div>
+                  
+                  </li>
+
+              </ul>
+            
+            </nav>
+            <!---------------------------navigation end--------------------- -->
+            </div>
+            
+            </header>
+<!---------------------------header end--------------------- --> 
+
+
+<!---------------------------main-start--------------------- -->
+
+  <main id="my-main">
+      <!---------------------------sidebar-start--------------------- -->
+      <aside>
+       <!---------------------------sidebar ko division category--------------------- -->
+        <div class="division-category">
+             
+            <a class="sidebarOpener">
+                <p><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+            </a>
+            <a class="sidebarCloser">
+                <p><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></p>
+            </a><p class="division">Related Question</p>
+
+
+        </div>
+            <ul class="question-lists"><!---------------------------related question collection--------------------- -->
+            <li class="question-list"><a href="#">What is java?</a></li>
+            <li class="question-list"><a href="#" id="division-select">How to start learning Java?</a></li> 
+            <li class="question-list"><a href="#">Why should I learn Java?</a></li>
+            <li class="question-list"><a href="#">How..</a></li>
+            <li class="question-list"><a href="#">c</a></li>
+            <li class="question-list"><a href="#">Java--</a></li>
+            <li class="question-list"><a href="#">Java++</a></li>
+            <li class="question-list"><a href="#">PHp+</a></li>    
+            </ul>
+
+        
+      </aside> 
+      <!---------------------------sidebar end--------------------- -->
+
+
+      <!---------------------------section for content start--------------------- -->
+
+        <section class="show-look-question">
+                <!--------------------------add answer box start--------------------- -->
+                <div class="show-question">
+                    <div class="show-questions-container">
+                        <!--------------------------question title--------------------- -->
+                        <h1 class="question-text">{{question}}</h1>
+                   
+                    <!---------------------------------more option------------------------------>
+                        <div class="more-option">
+                            <button class="option-anchor opt-1">
+                             <div class="cir-1"></div>
+                             <div class="cir-2"></div>
+                             <div class="cir-3"></div>
+                         </button>
+                        <div class="more-option-container-1 for-all-option for-all-option-question" id="closeMoreOption">
+                            <div class="more-option-second-container">
+                            <a href="#">delete</a>
+                            <a href="#">report</a>
+                        </div>
+                        </div>
+                         </div>
+                         <!---------------------------more-option-end--------------------- -->
+                        <div class="small-detail show-small-detail">
+                            <div class="tags">
+                                <a href="#" class="first-tag">Java</a>
+                                <a href="#" class="second-tag">Programmin</a>
+                            </div>
+                        </div>
+                        <div class="show-question-btn">
+                            <div class="add-ans-button">
+                        <button href="#" class="add-answer-btn btn" id="add-answer-btn">Add ANSWER</button>
+                        <div class="popup">
+                            <div class="popup-content"> 
+                                <i class="fa fa-times close" aria-hidden="true"></i> 
+                                <form action="/create/{{token}}&id={{id}}" method="post" class="answer-form">
+                                {{!-- <input type="hidden" value="{{token}}" name="token"> --}}
+                                    <div class="answer-input">
+                                        <textarea id="edit" cols="" rows="10" name="answer" placeholder="Enter your answer"></textarea>
+                                    </div>
+                                    <div class="image-input">
+                                        <label for="image" class="image-for-question">Add image<i class="fa fa-plus" aria-hidden="true"></i></label>
+                                        <input type="file" class="image-box" id="image">
+                                    </div>
+                                    <div class="submit-for-answer">
+                                        <input type="submit" id="answer-submit">
+                                    </div>
+                            </form>
+                            </div>
+                              
+                            </div>
+                    </div>
+                        
+                        <a href="#" class="follow-btn btn">Remember</a>
+                    </div>
+                    <div class="answer-number">
+                        {{answers.length}} Answer
+                    </div>
+                        
+                    </div>
+            </div>
+            <!--------------------------add answer end--------------------- -->
+
+            <!-------------------------answer container start--------------------- -->
+            {{#each answers}}
+            <div class="answer-container">
+                
+                <div class="answers">
+                    <div class="profile-information-answer">
+        
+                        <div class="profile-answer-time">
+                            <img src="data:image/png;base64,{{this.data}}" alt="">
+                            <div class="profile-text">
+                            <p>{{this.username}}</p><!--------profile-informatoin----------- -->
+                            <span>{{this.createdDate}}</span>
+                        </div>
+                        </div>
+                        <div class="add-friend">
+                            follow
+
+                        </div>
+                    </div>
+                    <div class="answer-content"><!------answer content------------- -->
+                        <p>{{this.answer}}</p>
+                             {{!-- <img src="../image/html/{3AA6A9A0-1738-4A0E-A8D3-E232218068D1}.png.jpg" alt="" class="answer-text-image">  --}}
+
+                    </div>
+
+                    <!--------------------------comment and like buttons--------------------- -->
+                    <div class="comment-answer">
+                       <a class="comment-btn" href="#comment-focus"><span>{{this.comment.length}}</span><i class="fa fa-commenting-o comment-icon" aria-hidden="true"></i></a>
+                       <div class="upvote-btn">
+                        <a href="/like{{this.motoken}}&ans_id={{_id}}"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a><span class="likecount">{{this.likes}}</span>
+
+                           <a href="/dislike{{this.motoken}}&ans_id={{_id}}"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a><span class="dislikecount">{{this.dislike}}</span>
+                       </div>
+                      
+                       <div class="more-option">
+                        <button class="option-anchor-answer opt-1" id="option-anchor-answer">
+                         <div class="cir-1"></div>
+                         <div class="cir-2"></div>
+                         <div class="cir-3"></div>
+                     </button>
+                    <div class="more-option-container-answer-1 for-all-option for-all-option-answer" id="closeMoreOption">
+                        <div class="more-option-second-container">
+                        <a href="#">delete</a>
+                        <a href="#">report</a>
+                    </div>
+                    </div>
+                     </div>
+                     </div>
+
+<!------------------------------------ comment box start----------------------------------------------------------->
+
+                     <div class="comment-container" id="comment-focus">
+                         
+                         {{#each this.comment}}
+                
+                         <div class="comment-content-box">
+                             <div class="answer-comment">
+                                 <div class="comment-profile-information-and-more-option">
+                                     <div class="answer-comment-profile-information">
+                                         <div class="answer-comment-profile">
+                                         <img src="{{comAvatar}}" alt="">
+                                        </div>
+                                         <div class="profile-information">
+                                             <p class="cmt-profile-name">{{this.username}}</p>
+                                             <p class="cmt-profile-date">{{this.createdDate}}</p>
+                                         </div>
+                                     </div>
+                                       <div class="more-option more-option-comment">
+                                        <button class="option-anchor-comment opt-1" id="option-anchor-comment">
+                                         <div class="cir-1"></div>
+                                         <div class="cir-2"></div>
+                                         <div class="cir-3"></div>
+                                     </button>
+                                    <div class="more-option-container-comment-1 for-all-option for-all-option-comment" id="closeMoreOption">
+                                        <div class="more-option-second-container">
+                                        <a href="#">delete</a>
+                                        <a href="#">report</a>
+                                    </div>
+                                    </div>
+                                     </div>
+                                  
+                                 </div>
+                                 <div class="answer-comment-text">
+                                     <h2>{{this.title}}</h2>
+                                 </div>
+                                 <div class="reply-comment-btn-container">
+                                     <button class="reply-comment-btn">reply <span>{{this.replylength}}</span></button>
+                                 </div>
+                             </div>
+
+ <!--------------------------------------------------reply-comments-start--------------------------------------------------->                            
+                         
+                             <div class="reply-comment">
+                                   {{#each this.subCmt}}
+                                 <div class="reply-input-above-code">
+                                 <div class="reply-profile-information-and-more-option">
+                                    <div class="reply-profile-information">
+                                        <div class="reply-profile">
+                 
+                                        <img src="{{this.replyAvatar}}" alt="">
+                                        </div>
+                                        <div class="reply-profile-details">
+                                            <p class="replyproname">{{this.usernamereply}}</p>
+                                            <p class="replyprodate">{{this.createdReplyDate}}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="more-option-reply">
+                                        <div class="more-option more-option-reply">
+                                            <button class="option-anchor-reply opt-1" id="option-anchor-reply">
+                                             <div class="cir-1"></div>
+                                             <div class="cir-2"></div>
+                                             <div class="cir-3"></div>
+                                         </button>
+                                        <div class="more-option-container-reply-1 for-all-option for-all-option-reply" id="closeMoreOption">
+                                            <div class="more-option-second-container">
+                                            <a href="#">delete</a>
+                                            <a href="#">report</a>
+                                        </div>
+                                        </div>
+                                         </div>
+                                    </div>
+                                 </div>
+                                 <div class="reply-comment-text">
+                                    <h3>{{this.title}} </h3>
+                                    
+                                </div>
+                         
+                            </div>
+                             {{/each}}
+                                 <div class="input-for-reply">
+                                     <form action="/subcomment{{this.cotoken}}&comment_id={{this._id}}" method="post">
+                                     <input type="text" name="title" id="reply-input" placeholder="Add a reply">
+                                     <button id="reply-add-btn" type="submit">add</button>
+                                    </form>
+                                 </div>
+                                        <!--------------------------reply-end--------------------- -->
+                             </div>
+                            
+                         </div>
+                         {{/each}}
+             
+
+        <!----------------------------------comment add btn--------------------- -->
+
+                         <div class="comment-profile-information">
+                            <img src="http://localhost:3000/user/profile{{this.motoken}}" alt="">
+                            <form action="/comment/{{this.motoken}}&answer_id={{this._id}}&question_id={{this.question_id}}" method="post">
+                            <input type="text" name="title" placeholder="Add a Comment" id="comment-input-field" autocomplete="off">
+                            <button type="submit" class="add-comment-btn" id="add-comment-button" name="comment">Add</button>
+                        </form>
+                            
+
+                        </div>
+                   
+                     </div>
+                     <!----------------------------------comment content end--------------------- -->
+                   
+                       
+                      
+                  
+                   
+                    
+                     </div>
+                    
+                 
+            </div>
+       {{/each}}
+        </section>
+          
+        <!--------------------------------answer section end---------------------------------------- -->
+       
+  </main>
+  <footer></footer>
+<!----------------------------------javascript code--------------------- -->
+  
+   
+  <script src="/js/viewAnswer/index.js"></script>
+
+  <script src="/js/shared.js"></script>
+</body>
+<!----------------------------------body-end--------------------- -->
+</html>

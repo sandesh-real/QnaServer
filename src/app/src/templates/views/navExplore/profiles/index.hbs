@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="../../icon/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/navExplore/profiles/style.css">
+    <title>Profile</title>
+</head>
+<body>
+  
+     <!---------------------------header start--------------------- -->
+
+            <header class="header-section">
+                    <!---------------------------quesiton pupof menu_--------------------- -->
+            
+                 
+                  <!-- other website content -->
+                  <!-- navigaiton menu top browser -->
+                  <div class="nav-info">
+                              <!---------------------------logo or brand_--------------------- -->
+            
+                  {{!-- <div class="main-logo-container"><a href="../../"><img src="/images/html/logo.png" alt="QnA-logo"></a></div> --}}
+                  <div class="main-logo-container"><a href="../../" style="text-decoration:none"><h1 style="font-size:3rem;text-decoration:none">QNA</h1></a></div>
+            
+                         <!---------------------------nav bar ko buttons--------------------- -->
+            
+                  <div class="btn-search-collection">
+                            
+            
+                     
+                     <!---------------------------question search input_--------------------- -->
+                   <div class="search-box-container">
+                     <form action="/test" method="get" class="searchForm">
+                      <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                      <input type="text" name="search" placeholder='search' id="{{this.token}}"  autocomplete="off" class="question-search-box">
+                     
+                      </form>
+                      <div class="searchOutput">
+                          <ul class="searchOutput_lists">
+                          </ul>
+                      </div>
+                      </div>
+            
+                              <!---------------------------add question btn_--------------------- -->
+                        <div class="addquestion-Btn-Container">      
+                      <a href="#" class="Add-question-button" id="addQuestionBtn">Add Question<i class="fa fa-plus" aria-hidden="true"></i></a>
+                      </div>
+            
+                              <!---------------------------responsive nav ko button start--------------------- -->
+                      <div class="small-nav">
+                          <div class="small-internal">
+                          <div class="bar1"></div>
+                          <div class="bar2"></div>
+                          <div class="bar3"></div>
+                      </div>
+                   
+                      </div>
+                <!---------------------------responsive nav ko button end--------------------- -->
+            
+                  </div>
+                 
+            </div>
+            <div class="nav-container">
+            <!---------------------------navigation start--------------------- -->
+            
+            
+                  <nav class="main-navs">
+            
+              <ul class="main__nav--lists">
+                  <li class="main__nav--list" ><a href="../../sub-main{{token}}" id="select"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                  <li class="main__nav--list" ><a href="../notifications/{{token}}"  id="{{token}}" class="menu-red"><i class="fa fa-bell notification__icon" aria-hidden="true" id="bell-notification"></i>Notification</a></li>
+                  <li class="main__nav--list"><a href="./{{token }}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                  <li class="main__nav--list Logout"  id="more-option"><i class="fa fa-caret-down" id="moreoption" aria-hidden="true"></i>
+                  <div class="moreOption-list" >
+                <a href="/user/logout/{{token }}">Logout</a>
+                
+                  </div>
+                  
+                  </li>
+
+              </ul>
+            
+            </nav>
+            <!---------------------------navigation end--------------------- -->
+            </div>
+            
+            </header>
+<!------header end----------------------->
+  <main>
+    <!----------------------------------------profile information-->
+                   {{#if error}}<span class="error-message">{{error}}</span>{{else}}<span class="success-message">{{success}}</span>{{/if}}
+    <h1 class="profileHeading">Your profile info</h1>
+     <section class="profile-section">
+       <div class="profile-picture-container">
+           <div class="img-container">
+             <img src="http://localhost:3000/user/profile/{{token}}" alt="" class="profile-pic">
+           </div>
+           <div class="profile-change-btn-container">
+             <form action="/user/profilepic{{token}}" method="post"  enctype="multipart/form-data">
+               <label for="profile-btn"></label>
+               <input type="file" class="profile-option" name="avatar" id="profile-btn">
+               <input type="submit" class="profile-change-btn" id="profile-change-btn" value="Change profile Picture">
+
+             </form>
+             
+           </div>
+       </div>
+        </section>
+
+      <section class="profileInfo">
+        <button class="edit-profile" id="edit-profile">Edit Profile</button>
+        <button class="edit-password" id="edit-password">Security</button>
+        <button class="your-question" id="your-question"><span>1</span> Questions</button>
+        <button class="your-answer" id="your-answer"><span>1</span> Answers</button>
+
+      </section>
+    <div class="after-profileBtn-click">
+       <div class="user-info-container">
+      <form action="../../user/update{{token}}" method="post" class="user-info-container-form">
+        <div class="change-username">
+          <label for="username">Username</label>
+          <input type="text" class="username" name="username" value="{{user.username}}" autocomplete="off">
+        </div>
+         <div class="change-email">
+          <label for="email">Email</label>
+          <input type="text" class="email" name="email" value="{{user.email}}" autocomplete="off">
+        </div>
+        
+
+        <div class="button-container">
+        <input type="submit" class="update-btn  focusProfile" value="update" >
+        </div>
+      </form>
+       </div>
+       <div class="yourSecurity">
+         <h1>Change Password</h1>
+         <form action="/user/update/password/{{token}}" method="post" class="user-info-container-form">
+               <div class="old-password">
+          <label for="oldpassword">Old Password</label>
+          <input type="password" class="oldpassword" name="oldpassword"  autocomplete="off">
+        </div>
+             <div class="new-password">
+          <label for="newpassword">New Password</label>
+          <input type="password" class="newpassword" name="newpassword"  autocomplete="off">
+        </div>
+         <div class="button-container">
+        <input type="submit" class="update-btn focusPassword" value="Update">
+        </div>
+         </form>
+       </div>
+
+       <div class="yourQuestions">
+               <div class="main-question-container">
+                
+                <h1 class="search-question-title">List Of Question Added By you!!!</h1><!-----section-title----------------------->
+                <div class="question-box">
+               <!------question-content start----------------------->
+             
+                    <div class="questions" id="questions">
+                        <div class="top-part">
+                        <p class="recommend-text">Question Added By You</p>
+                        <div class="more-option">
+                            <button class="option-anchor opt-1">
+                             <div class="cir-1"></div>
+                             <div class="cir-2"></div>
+                             <div class="cir-3"></div>
+                         </button>
+                        <div class="more-option-container-1 for-all-option" id="closeMoreOption">
+                            <div class="more-option-second-container">
+                            <a href="#">delete</a>
+                            <a href="#">report</a>
+                        </div>
+                        </div>
+                         </div>
+                        </div>
+                        <h1 class="question-text"><a href="#" class="question-more-tag">MY question</a></h1>
+                        
+                        <div class="question-image">
+                            <img src="../../image/html/{3AA6A9A0-1738-4A0E-A8D3-E232218068D1}.png.jpg" alt="fsdfds" >
+    
+                        </div>
+                   
+                        <!----------------tag-show----------------------->
+                        <div class="small-detail">
+                            <p>Answered, Aug-4,2020</p>
+                            <div class="tags">
+                                <a href="#" class="first-tag">Java</a>
+                                <a href="#" class="second-tag">Programmin</a>
+                            </div>
+                        </div>
+                        <div class="answer-btn-container">
+                        <a href="../../viewAnswer/" class="answer-btn" style="text-align: center;">VIEW ANSWER</a>
+                    </div>
+                    </div>
+                   
+                   
+                   <!------question content end----------------------->
+                    
+              
+                    </div>
+            </div>
+
+        
+       </div>
+       <div class="yourAnswers">
+               <div class="main-question-container">
+                
+                <h1 class="search-question-title">List Of Question Added By you!!!</h1><!-----section-title----------------------->
+                <div class="question-box">
+               <!------question-content start----------------------->
+             
+                    <div class="questions" id="questions">
+                        <div class="top-part">
+                        <p class="recommend-text">Question Added By You</p>
+                        <div class="more-option">
+                            <button class="option-anchor opt-1">
+                             <div class="cir-1"></div>
+                             <div class="cir-2"></div>
+                             <div class="cir-3"></div>
+                         </button>
+                        <div class="more-option-container-1 for-all-option" id="closeMoreOption">
+                            <div class="more-option-second-container">
+                            <a href="#">delete</a>
+                            <a href="#">report</a>
+                        </div>
+                        </div>
+                         </div>
+                        </div>
+                        <h1 class="question-text"><a href="#" class="question-more-tag">MY answer</a></h1>
+                        
+                        <div class="question-image">
+                            <img src="../../image/html/{3AA6A9A0-1738-4A0E-A8D3-E232218068D1}.png.jpg" alt="fsdfds" >
+    
+                        </div>
+                   
+                        <!----------------tag-show----------------------->
+                        <div class="small-detail">
+                            <p>Answered, Aug-4,2020</p>
+                            <div class="tags">
+                                <a href="#" class="first-tag">Java</a>
+                                <a href="#" class="second-tag">Programmin</a>
+                            </div>
+                        </div>
+                        <div class="answer-btn-container">
+                        <a href="../../viewAnswer/" class="answer-btn" style="text-align: center;">VIEW ANSWER</a>
+                    </div>
+                    </div>
+                   
+                   <!------question content end----------------------->
+                    
+              
+                    </div>
+            </div>
+
+        
+       </div>
+
+
+
+
+       </div>
+    
+  </main>
+  <footer></footer>
+
+  <script src="/js/navExplore/profiles/index.js"></script>
+  <script src="/js/shared.js"></script>
+  
+</body>
+</html>

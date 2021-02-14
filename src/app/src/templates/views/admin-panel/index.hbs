@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../icon/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/admin-panel/shared.css">
+    <link rel="stylesheet" href="/css/admin-panel/admin.css">
+
+</head>
+<body>
+    <!-- header start -->
+    <header>
+        <!-- navigation-start -->
+        <nav>
+            <div class="nav-btn-container">
+                <div class="front-end-btn">
+                    <a href="../sub-main/index.html">Front</a>
+                </div>
+                <div class="admin-profile-information">
+                    <div class="admin-profile-information-container">
+                        <a href="#" class="admin-profile">Profile name</a>
+                    <div class="profile-drop-down">
+                        <ul class="admin-profile-information-lists">
+                            <li class="admin-profile-information-list">
+                                <a href="#">Setting</a>
+    
+                            </li>
+                            <li class="admin-profile-information-list">
+                                <a href="admin-login.html">logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+               
+               
+            </div>
+        <!-- </nav> navigation-end -->
+    </header>
+    <!------header end----------------------->
+<!------------------------------main-start------------------------------>
+<main>
+    <!------sidebar start----------------------->
+        <aside>
+            <div class="sidebar-for-admin">
+                <div class="dashboard-btn">
+                    <a href="/admin">Dashboard</a>
+                </div>
+                <div class="question-information sid-btn">
+                    <a href="admin/questions/">questions</a>
+                </div>
+                 <div class="question-information sid-btn">
+                    <a href="admin/addSubject">Add Subject</a>
+                </div>
+                  <div class="question-information sid-btn">
+                    <a href="admin/addFaculty">Add Faculty</a>
+                </div>
+                 
+            </div>
+        </aside>
+        <!------sidebar end----------------------->
+        
+        <!------section start----------------------->
+        <section>
+            <div class="question-information-box">
+                <div class="information-of-question">
+                    <div class="number-of-question-box">
+                        <h2>Number of question</h2>
+                        <p>5</p>
+                    </div>
+                    <div class="number-of-unanswer-question-box">
+                        <h2>Number of unanswer question</h2>
+                        <p>5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------section end----------------------->
+    </main>
+    <!------main end----------------------->
+    <!------javascript----------------------->
+    <script src="admin.js"></script>
+</body>
+</html>

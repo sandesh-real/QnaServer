@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/icon/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/sub-main/style.css">
+    <title>SubMain</title>
+</head>
+<body>
+    
+    <p style="display:none" class="hiddenpara">{{token}}</p>
+                  <!---------------------------header start--------------------- -->
+                  <header class="header-section">
+                    <!---------------------------quesiton pupof menu_--------------------- -->
+            
+                  <!-- other website content -->
+                  <!-- navigaiton menu top browser -->
+                  <div class="nav-info">
+                              <!---------------------------logo or brand_--------------------- -->
+            
+                  {{!-- <div class="main-logo-container"><a href="../"><img src="/images/html/logo.png" alt="QnA-logo"></a></div> --}}
+                  <div class="main-logo-container"><a href="../" style="text-decoration:none"><h1 style="font-size:3rem;text-decoration:none">QNA</h1></a></div>
+            
+                         <!---------------------------nav bar ko buttons--------------------- -->
+            
+                  <div class="btn-search-collection">
+                            
+        
+                     <!---------------------------question search input_--------------------- -->
+                     <div class="search-box-container">
+                     <form action="/test" method="get" class="searchForm">
+                     <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                      <input type="text" name="search" placeholder='search' id="{{token}}"  autocomplete="off" class="question-search-box searchvalueforquestion">
+                     
+
+                      </form>
+                      <div class="searchOutput">
+                          <ul class="searchOutput_lists">
+                          </ul>
+                      </div>
+                      </div>
+            
+                              <!---------------------------add question btn_--------------------- -->
+                        <div class="addquestion-Btn-Container">      
+                      <a class="Add-question-button" id="addQuestionBtn">Add Question<i class="fa fa-plus" aria-hidden="true"></i></a>
+                      </div>
+            
+                              <!---------------------------responsive nav ko button start--------------------- -->
+                      <div class="small-nav">
+                          <div class="small-internal">
+                          <div class="bar1"></div>
+                          <div class="bar2"></div>
+                          <div class="bar3"></div>
+                      </div>
+                   
+                      </div>
+                <!---------------------------responsive nav ko button end--------------------- -->
+                  </div>
+                 
+            </div>
+            <div class="nav-container">
+            <!---------------------------navigation start--------------------- -->
+            
+            
+            <nav class="main-navs">
+            
+              <ul class="main__nav--lists">
+                  <li class="main__nav--list" ><a href="" class="menu-select"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                  <li class="main__nav--list" ><a href="../navExplore/notifications/{{token }}" id="{{token}}"  class="menu-select menu-red"><i class="fa fa-bell notification__icon" aria-hidden="true" id="bell-notification"></i>Notification</a></li>
+                  <li class="main__nav--list"><a href="../navExplore/profiles/{{token }}"  class="menu-select"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                  <li class="main__nav--list Logout"  id="more-option"><i class="fa fa-caret-down" id="moreoption" aria-hidden="true"></i>
+                  <div class="moreOption-list" id="moreOption-list">
+                <a href="/user/logout/{{token }}" id="logout">Logout</a>
+                
+                  </div>
+                  
+                  </li>
+
+              </ul>
+            
+            </nav>
+            <!---------------------------navigation end--------------------- -->
+            </div>
+            
+            </header>
+            <!---------------------------header end--------------------- -->
+
+    
+            <!---------------------------main start--------------------- -->
+
+  <main id="my-main">
+                  <!---------------------------side bar start--------------------- -->
+
+      <aside>
+        <div class="division-category">
+            
+            <p href="../divisions/index.html" class="division">Subject</p>
+           
+        <a class="sidebarOpener">
+            <p><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></p>
+        </a>
+        <a class="sidebarCloser">
+            <p><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></p>
+        </a>
+        </div>
+            <ul class="subject-lists">
+                {{#each subjects}}
+                <li class="subject-list"><a href="../navExplore/subject/{{this.token}}&subjectname={{this.subjectname}}">{{this.subjectname}}</a></li>
+                {{/each}}
+            </ul>
+            
+
+      </aside>
+                  <!---------------------------sidebar end--------------------- -->
+    
+
+
+
+ <!---------------------------main-section start--------------------- -->
+
+        <section class="ask-look-question">
+             <!---------------------------pop up to add question start--------------------- -->
+            <div class="popup">
+                <div class="popup-content">
+                    <form action="/question/create{{token}}" method="post"><!--------------------popup form----------------- -->
+
+                    <div class="question-form">
+                       
+                        <i class="fa fa-times close" aria-hidden="true"></i>
+                        <div class="select-design public-private"><!--------------------select for annonymity----------------- -->
+                     
+                                <select name="question-anonymous-box" id="question-anonymous-box">
+                                    <option value="#" selected disabled>Annonymity</option>
+                                    <option value="Public">Public(profile visible)</option>
+                                    <option value="Private">Private(profile hidden)</option>
+                                </select>
+            
+                            </div>
+                        
+                        <div class="question-input"><!--------------------popup form----------------- -->
+                            <input type="text" class="question-input-section"  name="title" placeholder="Asked Question: Starts from 'what' ,'who', 'How' etc  "> 
+                        </div>
+                        <!--------------------image show after select image----------------- -->
+                        <div class="img-show"><div class="inner-circle"><img src="" alt="" id="image-field"></div></div>
+                        <div class="add-image"><!--------------------select image----------------- -->
+                            <label for="image" class="image-for-question">Add image<i class="fa fa-plus" aria-hidden="true"></i></label>
+                            <input type="file" class="image-box"  id="image">
+                        </div>
+                        <div class="question-tag"><!--------------------select tag  question ko laagi----------------- -->
+                            <div class="question-tag-box">
+                            <button class="taglist-btn" disabled>Add tag<i class="fa fa-plus" id="add" aria-hidden="true"></i></button>
+                            <div class="tag-selected-container"><!--------------------tag list----------------- -->
+                                <ul class="tag-selected-lists">
+                                    {{!-- <li class="tag-selected-list"><input type="checkbox" class="tag-checkedBox" id="tag-for-1" value="finance" name="subjectname"><label for="tag-for-1">finance</label></li>
+                                    <li class="tag-selected-list"><input type="checkbox" class="tag-checkedBox" id="tag-for-2" value="web" name="tagCheckedBox"><label for="tag-for-2">web</label></li>
+                                    <li class="tag-selected-list"><input type="checkbox" class="tag-checkedBox" id="tag-for-3" value="programming" name="tagCheckedBox"><label for="tag-for-3">programming</label></li>
+                                    <li><input type="text" placeholder="Add tag"></li> --}}
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                        <!--  -->
+                        <div class="select-design select-subject"><!--------------------select subject----------------- -->
+
+                            <select name="subjectname" id="question-subject-box">
+                                <option value="#" selected disabled>Choose subject</option>
+                               
+                                {{#each subjects}}     
+                                <option value="{{this.subjectname}}">{{this.subjectname}}</option>
+                                {{/each}}
+                              
+                            </select>
+                        </div>
+                        <!--------------------question submit button----------------- -->
+                        <button type="submit" id="add-question-btn" class="add-question-btn" name="add-question">add question</button>
+                    </div>
+                </div>
+                    </form>
+                   
+                
+                </div>
+                <!--------------------popup to add question end----------------- -->
+                
+                <div class="ask-question"><!--------------------ask question input selector in main content body----------------- -->
+                     <a href="../navExplore/profiles/{{token}}" class="question-profile">{{username}}</a>
+                    <button class="ask-question-box" id="question-btn">
+                    <h2>What is your Question?</h2>
+                   
+                    <p class="question-click">(click to add)</p>
+                    </button>
+            </div>
+            <!--------------------main-question contaier for recommendation----------------- -->
+            <div class="main-question-container">
+                <div class="question-box">
+               <!--------------------question container ko bhitrai real question content start----------------- -->
+               
+               {{#each questions}}
+                <div class="questions" id="questions">
+                    <div class="top-part">
+                    <p class="recommend-text">Recommendate For You</p>
+                    <div class="more-option">
+                        <button class="option-anchor">
+                         <div class="cir-1"></div>
+                         <div class="cir-2"></div>
+                         <div class="cir-3"></div>
+                     </button>
+                    <div class="for-all-option" id="closeMoreOption">
+                        <div class="more-option-second-container">
+                             {{#if this.usersAnswer}}
+                             
+                        <a href="/deletepost{{this.motoken}}&q_id={{this._id}}" class="more-option-delete">delete</a>
+                        <a href="#" class="more-option-edit">edit</a>
+                        {{else}}
+                           <a href="#" class="more-option-report">report</a>
+                           {{/if}}
+
+                    </div>
+                    </div>
+                     </div>
+                    </div>
+                    <h1 class="question-text">{{this.title}} <a href="#" class="question-more-tag"></a></h1>
+                    
+                    {{!-- <div class="question-image">
+                        <img src="../image/html/{3AA6A9A0-1738-4A0E-A8D3-E232218068D1}.png.jpg" alt="fsdfds" >
+
+                    </div> --}}
+               
+                    
+                    <div class="small-detail">
+                        <p>Answered, Aug-4,2020</p>
+                        <div class="tags">
+                            <a href="#" class="first-tag">Java</a>
+                            <a href="#" class="second-tag">Programmin</a>
+                        </div>
+                    </div>
+                    <div class="answer-btn-container">
+                        {{#if this.isAnswer}}
+                    <a href="../viewAnswer/{{this.motoken}}&id={{this._id}}" class="answer-btn" style="text-align: center;">VIEW ANSWER</a>
+                   {{else}}
+                     
+                    <a href="../viewAnswer/{{this.motoken}}&id={{this._id}}" class="answer-btn" style="text-align: center;">NOT ANSWER YET</a>
+                   {{/if}}
+                </div>
+                </div>{{/each}}
+                
+             
+               <!--------------------question container ko bhitrai real question content end----------------- -->
+
+              
+          
+                </div>
+               
+    <!--------------------question content ko parent jun ko bhitra recommendation quesiton ko box hunx----------------- -->
+
+            </div>
+
+            <!--------------------question container end----------------- -->
+        
+        </section>
+          <!--------------------question add and question recomendation end----------------- -->
+
+
+
+
+        {{!--------- right sidebar start ------------------}}
+    <aside class="sidebar-right">
+ <div class="most-popular">
+            
+            <p href="../divisions/index.html" class="popular">Most Popular</p>
+        </div>
+            <ul class="question-lists">
+                <li class="question-list"><a href="#">What is java?</a></li>
+            </ul>
+            
+    </aside>
+
+    {{!-- right sidebar end --}}
+
+
+
+
+
+  </main>
+         <!--------------------main end----------------- -->
+
+  <footer></footer>
+<script>
+
+</script>
+  <script src="/js/sub-main/main.js"></script>
+  <script>
+      if(window.location.href==='http://localhost:3000/user/login')
+      {
+   const hiddenpara=document.querySelector('.hiddenpara');
+        const url=window.location.href.slice(0,-10)+"sub-main";
+        
+        const Urls=url+hiddenpara.innerText;
+         window.history.replaceState(null,null,Urls);
+      }
+   
+  
+  </script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

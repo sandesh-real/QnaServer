@@ -1,0 +1,608 @@
+*
+{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+html{
+    font-size:62.5%;
+
+}
+
+.profileHeading
+{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    position:relative;
+    margin-bottom:3rem;
+    
+}
+.profileHeading::after
+{
+    content:"";
+    position:absolute;
+    width:10rem;
+    height:3px;
+    background-color:#F17516;
+    bottom:-60%;
+    left:50%;
+    transform:translateX(-50%);
+
+}
+
+.profile-section
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+ 
+    height:auto;
+    
+}
+
+.profile-picture-container{
+    height:285px;
+    width:300px;
+    margin-bottom:3rem;
+   
+    
+
+}
+.img-container
+{
+width:150px;
+height:150px;
+border-radius:100px;
+margin:1rem auto 0 auto;
+
+
+}
+
+.profile-pic{
+    width:100%;
+    height:100%;
+    border-radius: 100px;
+    border:1px solid rgb(177, 177, 177);
+}
+
+.profile-change-btn-container
+{
+    text-align: center;
+    margin-top:4rem;
+}
+.profile-option
+{
+    display:inline-block;
+    margin-left:5rem;
+}
+.profile-change-btn
+{
+    background-color:#05b22d;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding:1rem 2rem;
+    color:#fff;
+    font-size:1.3rem;
+    border-radius:0.5rem;
+    border:none;
+    margin-top:2rem;
+    display:none;
+}
+/*************profile btn click*************/
+.profile-change-btn-display
+{
+    display:inline-block;
+}
+
+.error-message,
+.success-message
+{
+    margin-bottom:1rem;
+    letter-spacing: 0.1rem;
+    display:block;
+    text-align: center;
+}
+.error-message
+{
+    color:rgb(238, 0, 0);
+}
+.success-message
+{
+    color:#05b22d;
+}
+
+/********************profile info btns*****************/
+
+.profileInfo
+{
+    /* background-color:red; */
+    text-align: center;
+    padding:2rem 0;
+    /* border-bottom:2px solid rgba(177, 177, 177, 0.582); */
+    border-top:2px solid rgba(177, 177, 177, 0.582);
+    width:50%;
+    margin:0 auto 2.5rem auto;
+}
+
+.profileInfo button
+{
+    padding:1rem 1.5rem;
+    background-color: rgb(0, 0, 0);
+    border:none;
+    border-radius: 0.5rem;
+    margin-right:2rem;
+    cursor: pointer;
+    color:#fff;
+    
+}
+.profileInfo button:focus
+{
+    outline:none;
+}
+
+/*****************form to edit user info***************/
+
+.after-profileBtn-click
+{
+    height:auto;
+
+    padding:2rem;
+    width:100%;
+    
+}
+
+/*******************you user ko profile info with password*********/
+.user-info-container,
+.yourSecurity
+{
+    width:30%;
+    margin:0 auto;
+    display:none;
+    
+}
+.yourSecurity h1
+{
+    text-align:center;
+}
+/*************user info containner display on off**********/
+
+.user-info-container-display{
+    display:block;
+}
+
+
+
+.user-info-container-form
+{
+    padding:3rem;
+    background-color:#fff;
+    
+}
+.change-username,
+.change-email,
+.old-password,
+.new-password
+
+{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom:2rem;
+}
+.change-username label,
+.change-email label,
+.change-password label
+{
+font-size:1.5rem;
+margin-bottom:0.5rem;
+}
+.username,
+.email,
+.password,
+.oldpassword,
+.newpassword
+{
+    padding:1rem 1.2rem;
+    background-color:rgba(202, 202, 202, 0.521);
+    border:none;
+    width:100%;
+}
+
+.button-container
+{
+    text-align: center;
+
+}
+.update-btn
+{
+    display: inline-block;
+    padding:1rem 2rem;
+    border:none;   
+}
+.update-btn:focus
+{
+    outline: none;
+}
+/*******************security display on of*********/
+
+.yourSecurity-display
+{
+    display:block;
+}
+
+/*******************your question start*************/
+.yourQuestions
+{
+    height:auto;
+    display:none;
+}
+
+/********************your question display on off*********/
+.yourQuestions-display
+{
+    display:block;
+}
+
+
+/***********your question end********/
+
+
+/*******************your question start*************/
+.yourAnswers
+{
+    height:auto;
+    display:none;
+}
+
+/********************your answer display on off*********/
+.yourAnswers-display
+{
+    display:block;
+}
+
+
+/***********your question end********/
+
+
+
+
+
+
+/********************question and answer section start ***************************/
+.main-question-container
+{
+    width:100%;
+    height:auto;
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    
+}
+.main-question-container:first-of-type{
+    margin-top:2rem;
+}
+.search-question-title
+{
+    color:#707070;
+    letter-spacing: 0.09rem;
+}
+.question-box
+{
+    height:auto;
+    width:100%;
+    margin:1.2rem auto;
+}
+.questions
+{   
+    
+    width:80%;
+    height:auto;
+   
+    padding:2rem;
+    margin:0 auto 2rem auto;
+    background-color: #F6F6F6;
+box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+
+}
+
+
+.question-text
+{
+   
+    margin-top:0.6rem;
+    letter-spacing: 0.06rem;
+    font-size:24px;
+    margin-bottom: 0;
+   
+}
+/*****************************************question-image*****************************************/
+.question-image
+{
+    width:80%;
+    height:20rem;
+    margin:1rem auto 1rem 2rem;
+    border:8px solid #f6f6f6;
+    box-shadow:-7px -7px 6px #fff,4px 4px 6px #dcd6d6;
+
+}
+.question-image img
+{
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+
+.question-more-tag
+{
+    text-decoration: none;
+    color:#05B22D;
+    transition:color 0.3s;
+}
+.question-more-tag:hover {
+    color: rgb(7, 144, 39);
+}
+.top-part
+{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+
+.recommend-text
+{
+
+    font-size:0.6rem;
+    color:#707070;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+/*****************************************more option ko css ho*************************************/
+
+.recommend-text
+{
+
+    font-size:0.6rem;
+    color:#707070;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+.more-option
+{
+position:relative;
+}
+.for-all-option
+{
+    position: absolute;
+    top: 3rem;
+    left: 0rem;
+    width: 8rem;
+    height: auto;
+    background-color: rgba(112, 112, 112, 0.884);
+    transition: .5s;
+    display: none;
+}
+
+.more-option-second-container
+{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    width:100%;
+}
+.more-option-active
+{
+    display:inline-block;
+}
+.for-all-option a
+{
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    text-align: center;
+
+}
+.for-all-option::after
+{
+    position: absolute;
+    top: -1rem;
+    left: 7px;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    border-left: 1px solid rgb(112, 112, 112);
+    border-top: 1px solid rgb(112, 112, 112);
+    transform: rotateZ(46deg);
+    background-color: #808080;
+}
+.option-anchor
+{
+    text-decoration:none;
+    border:none;
+    background-color: #F6F6F6;
+    box-shadow:-3px -3px 6px #fff,3px 3px 6px #dcd6d6;
+    outline:none;
+    cursor: pointer;
+  
+}
+.option-anchor:hover
+{
+    box-shadow:inset -3px -3px 6px #fff,inset 3px 3px 6px #dcd6d6;
+}
+
+
+.cir-1,
+.cir-2,
+.cir-3
+{
+    display: inline-block;
+    width:5px;
+    height:5px;
+    margin:0;
+    padding:0;
+    border:1px solid rgba(0,0,0,0.8);
+    border-radius:50px;
+    
+
+
+}
+
+
+/********************************************small detail bhaneko question box ko segments ho*********************/
+.small-detail
+{
+   
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#707070;
+    letter-spacing: 0.1rem;
+    margin:0 1rem 0 0rem ;
+}
+.small-detail p
+{
+    font-size:0.6rem;
+}
+.answer-btn-container
+{
+
+   width:100%;
+   
+   height:50%;
+   padding-top: 3rem;
+   text-align: right;
+
+}
+
+.answer-btn-container a
+{
+    
+   text-align:center;
+    text-decoration:none;
+    border-radius:50px;
+    background-color:#F17516;
+    padding:0.7rem 0.9rem;
+    font-size:0.6rem;
+    letter-spacing: 0.1rem;
+    color:#F6F6F6;
+    font-weight: 700;
+    box-shadow:1px 1px 2px 1px rgba(0,0,0,0.3);
+    transition:background-color 0.3s;
+
+}
+.answer-btn-container a:hover
+{
+    background-color: rgb(196, 92, 13);
+}
+/*******************************************tag ko laagi*****************************************/
+.first-tag,
+.second-tag
+{
+text-decoration: none;
+padding:0.2rem 2rem;
+border-radius: 50px;
+font-size:0.5rem;
+color:#Fff;
+}
+.first-tag:hover,
+.second-tag:hover
+{
+    box-shadow:inset -3px -3px 6px #fff,inset 3px 3px 6px #dcd6d6;
+}
+.first-tag:hover
+{
+    color:3
+}
+.first-tag
+{
+   
+    color: #32ACFE;
+box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+
+}
+.second-tag
+{
+
+
+color: #F60000;
+box-shadow:-3px -3px 6px #fff,3px 3px 6px #dcd6d6;
+}
+.first-tag:hover
+{
+    color:rgb(24, 136, 211);
+}
+
+.second-tag:hover
+{
+color:rgb(185, 7, 7);
+}
+
+
+/****************************************************question box end bhayeko awasta*********************/
+/*****************************************responsive design****************************************/
+
+
+@media (max-width:900px)
+{
+    .search-question-title
+    {
+        font-size:1.4rem;
+    }
+    .question-text
+    {
+        font-size:1.2rem;
+    }
+}
+@media (max-width:600px)
+{
+    .search-question-title
+    {
+        font-size:1.2rem;
+    
+    }
+    .question-text
+    {
+        font-size:1.2rem;
+    }
+    .questions
+    {
+        width:100%;   
+    }  
+
+}
+@media (max-width:450px)
+{
+    .search-question-title
+    {
+        font-size:1rem;
+    
+    }
+    .question-text
+    {
+        font-size:1.2rem;
+    }
+    .questions
+    {
+        height:17rem;
+    }
+       
+    .first-tag,
+    .second-tag
+    {
+        padding:0.1rem 1rem;
+        font-size:0.4rem;
+    }
+
+}

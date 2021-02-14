@@ -1,0 +1,78 @@
+ 
+section{
+   
+    width:100%;
+    display:flex;
+    justify-content: center;
+  
+}
+.form-container
+{
+    
+    width:60%;
+    margin:8rem auto;
+    padding:1rem 0;
+  
+}
+.addsubject-title
+{
+    text-align:center;
+}
+.addsubject-title::after
+{
+content:"";
+width:5rem;
+height:2px;
+background-color:#F17516;
+}
+.addsubjectForm
+{
+    width:60%;
+   
+    height:98%;
+    margin:0 auto;
+    padding:2rem 2rem;
+}
+
+.subjectName-container,
+.faculty-container,
+.sem-container,
+.year-container
+{
+margin-bottom:0.6rem;
+}
+.subjectName-label,
+.sem-label,
+.year-label,
+.faculty-label
+{
+    display:block;
+    margin-bottom:0.4rem;
+}
+.subjectName-input,
+.sem-input,
+.year-input,
+.faculty-input
+{
+padding:0.5rem 0.2rem;
+width:100%;
+border:1px solid rgba(0, 0, 0, 0.288);
+    border-radius:0.2rem;
+}
+.facultyName-input:focus,
+.sem-input:focus
+{
+outline:none;
+}
+.faculty-btn
+{
+    margin-top:1rem;
+    padding:0.4rem 1rem;
+    width:100%;
+    background-color:#F17516;
+    border:none;
+    border-radius:0.2rem;
+    color:#fff;
+    font-size:1rem;
+    letter-spacing:0.05rem;
+}

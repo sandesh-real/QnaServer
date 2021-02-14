@@ -1,0 +1,53 @@
+
+
+/******************************************************main css******************************************************/
+main
+{
+    display:flex;
+}
+/******************************************************admin sidebar*****************************************************/
+
+
+/***********************************************admin main section ko css********************************/
+section{
+    width:70%;
+    margin:0 auto;
+    height:100vh;
+}
+.question-information-box
+{
+    width:100%;
+    height:auto;
+}
+
+.information-of-question
+{
+    margin-top:3rem;
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.number-of-question-box,.number-of-unanswer-question-box
+{
+    width:30%;
+    border:1px solid #a09e9e7c;
+    padding:1rem;
+    height:10rem;
+    text-align: center;
+
+}
+.number-of-question-box h2,.number-of-unanswer-question-box h2
+{
+font-size:1.2rem;
+color:#a09e9e;
+}
+.number-of-question-box p,.number-of-unanswer-question-box p
+{
+    color:#a09e9e;
+    font-size:5rem;
+
+}
+

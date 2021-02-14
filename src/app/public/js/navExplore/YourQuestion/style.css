@@ -1,0 +1,337 @@
+
+/*********************main answer section ***************************/
+.main-question-container
+{
+    width:100%;
+    height:auto;
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    
+}
+.main-question-container:first-of-type{
+    margin-top:2rem;
+}
+.search-question-title
+{
+    color:#707070;
+    letter-spacing: 0.09rem;
+}
+.question-box
+{
+    height:auto;
+    width:100%;
+    margin:1.2rem auto;
+}
+.questions
+{   
+    
+    width:80%;
+    height:auto;
+   
+    padding:2rem;
+    margin:0 auto 2rem auto;
+    background-color: #F6F6F6;
+box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+
+}
+
+
+.question-text
+{
+   
+    margin-top:0.6rem;
+    letter-spacing: 0.06rem;
+    font-size:24px;
+    margin-bottom: 0;
+   
+}
+/*****************************************question-image*****************************************/
+.question-image
+{
+    width:80%;
+    height:20rem;
+    margin:1rem auto 1rem 2rem;
+    border:8px solid #f6f6f6;
+    box-shadow:-7px -7px 6px #fff,4px 4px 6px #dcd6d6;
+
+}
+.question-image img
+{
+    display:inline-block;
+    width:100%;
+    height:100%;
+}
+
+
+.question-more-tag
+{
+    text-decoration: none;
+    color:#05B22D;
+    transition:color 0.3s;
+}
+.question-more-tag:hover {
+    color: rgb(7, 144, 39);
+}
+.top-part
+{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+
+.recommend-text
+{
+
+    font-size:0.6rem;
+    color:#707070;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+/*****************************************more option ko css ho*************************************/
+
+.recommend-text
+{
+
+    font-size:0.6rem;
+    color:#707070;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+.more-option
+{
+position:relative;
+}
+.for-all-option
+{
+    position: absolute;
+    top: 3rem;
+    left: 0rem;
+    width: 8rem;
+    height: auto;
+    background-color: rgba(112, 112, 112, 0.884);
+    transition: .5s;
+    display: none;
+}
+
+.more-option-second-container
+{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    width:100%;
+}
+.more-option-active
+{
+    display:inline-block;
+}
+.for-all-option a
+{
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    text-align: center;
+
+}
+.for-all-option::after
+{
+    position: absolute;
+    top: -1rem;
+    left: 7px;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    border-left: 1px solid rgb(112, 112, 112);
+    border-top: 1px solid rgb(112, 112, 112);
+    transform: rotateZ(46deg);
+    background-color: #808080;
+}
+.option-anchor
+{
+    text-decoration:none;
+    border:none;
+    background-color: #F6F6F6;
+    box-shadow:-3px -3px 6px #fff,3px 3px 6px #dcd6d6;
+    outline:none;
+    cursor: pointer;
+  
+}
+.option-anchor:hover
+{
+    box-shadow:inset -3px -3px 6px #fff,inset 3px 3px 6px #dcd6d6;
+}
+
+
+.cir-1,
+.cir-2,
+.cir-3
+{
+    display: inline-block;
+    width:5px;
+    height:5px;
+    margin:0;
+    padding:0;
+    border:1px solid rgba(0,0,0,0.8);
+    border-radius:50px;
+    
+
+
+}
+
+
+/********************************************small detail bhaneko question box ko segments ho*********************/
+.small-detail
+{
+   
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#707070;
+    letter-spacing: 0.1rem;
+    margin:0 1rem 0 0rem ;
+}
+.small-detail p
+{
+    font-size:0.6rem;
+}
+.answer-btn-container
+{
+
+   width:100%;
+   
+   height:50%;
+   padding-top: 3rem;
+   text-align: right;
+
+}
+
+.answer-btn-container a
+{
+    
+   text-align:center;
+    text-decoration:none;
+    border-radius:50px;
+    background-color:#F17516;
+    padding:0.7rem 0.9rem;
+    font-size:0.6rem;
+    letter-spacing: 0.1rem;
+    color:#F6F6F6;
+    font-weight: 700;
+    box-shadow:1px 1px 2px 1px rgba(0,0,0,0.3);
+    transition:background-color 0.3s;
+
+}
+.answer-btn-container a:hover
+{
+    background-color: rgb(196, 92, 13);
+}
+/*******************************************tag ko laagi*****************************************/
+.first-tag,
+.second-tag
+{
+text-decoration: none;
+padding:0.2rem 2rem;
+border-radius: 50px;
+font-size:0.5rem;
+color:#Fff;
+}
+.first-tag:hover,
+.second-tag:hover
+{
+    box-shadow:inset -3px -3px 6px #fff,inset 3px 3px 6px #dcd6d6;
+}
+.first-tag:hover
+{
+    color:3
+}
+.first-tag
+{
+   
+    color: #32ACFE;
+box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+
+}
+.second-tag
+{
+
+
+color: #F60000;
+box-shadow:-3px -3px 6px #fff,3px 3px 6px #dcd6d6;
+}
+.first-tag:hover
+{
+    color:rgb(24, 136, 211);
+}
+
+.second-tag:hover
+{
+color:rgb(185, 7, 7);
+}
+
+
+/****************************************************question box end bhayeko awasta*********************/
+/*****************************************responsive design****************************************/
+
+
+@media (max-width:900px)
+{
+    .search-question-title
+    {
+        font-size:1.4rem;
+    }
+    .question-text
+    {
+        font-size:1.2rem;
+    }
+}
+@media (max-width:600px)
+{
+    .search-question-title
+    {
+        font-size:1.2rem;
+    
+    }
+    .question-text
+    {
+        font-size:1.2rem;
+    }
+    .questions
+    {
+        width:100%;   
+    }  
+
+}
+@media (max-width:450px)
+{
+    .search-question-title
+    {
+        font-size:1rem;
+    
+    }
+    .question-text
+    {
+        font-size:1.2rem;
+    }
+    .questions
+    {
+        height:17rem;
+    }
+       
+    .first-tag,
+    .second-tag
+    {
+        padding:0.1rem 1rem;
+        font-size:0.4rem;
+    }
+
+}

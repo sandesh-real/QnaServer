@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Notification</title>
+    <link rel="stylesheet" href="../../icon/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/navExplore/notifications/style.css">
+    <link rel="stylesheet" href="/css/shared.css">
+</head>
+<body> 
+     <!---------------------------header start--------------------- -->
+
+         <header class="header-section">
+                    <!---------------------------quesiton pupof menu_--------------------- -->
+        
+                 
+                  <!-- other website content -->
+                  <!-- navigaiton menu top browser -->
+                  <div class="nav-info">
+                              <!---------------------------logo or brand_--------------------- -->
+            
+                  {{!-- <div class="main-logo-container"><a href="../"><img src="/images/html/logo.png" alt="QnA-logo"></a></div> --}}
+                  <div class="main-logo-container"><a href="../../" style="text-decoration:none"><h1 style="font-size:3rem">QNA</h1></a></div>
+            
+                         <!---------------------------nav bar ko buttons--------------------- -->
+            
+                  <div class="btn-search-collection">
+                            
+            
+                     
+                     <!---------------------------question search input_--------------------- -->
+                    <div class="search-box-container">
+                     <form action="/test" method="get" class="searchForm">
+                    <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                      <input type="text" name="search" placeholder='search' id="{{this.token}}"  autocomplete="off" class="question-search-box">
+                     
+                      </form>
+                      <div class="searchOutput">
+                          <ul class="searchOutput_lists">
+                          </ul>
+                      </div>
+                      </div>
+            
+                              <!---------------------------add question btn_--------------------- -->
+                        <div class="addquestion-Btn-Container">      
+                      <a href="../../sub-main{{token}}" class="Add-question-button" id="addQuestionBtn">Add Question<i class="fa fa-plus" aria-hidden="true"></i></a>
+                      </div>
+            
+                              <!---------------------------responsive nav ko button start--------------------- -->
+                      <div class="small-nav">
+                          <div class="small-internal">
+                          <div class="bar1"></div>
+                          <div class="bar2"></div>
+                          <div class="bar3"></div>
+                      </div>
+                   
+                      </div>
+                <!---------------------------responsive nav ko button end--------------------- -->
+            
+                  </div>
+                 
+            </div>
+            <div class="nav-container">
+            <!---------------------------navigation start--------------------- -->
+            
+            
+               <nav class="main-navs">
+            
+              <ul class="main__nav--lists">
+                  <li class="main__nav--list" ><a href="../../sub-main{{token}}" id="select"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                  <li class="main__nav--list" ><a href="./{{token}}" id="{{token}}" class="menu-red"><i class="fa fa-bell notification__icon" aria-hidden="true" id="bell-notification"></i>Notification</a></li>
+                  <li class="main__nav--list"><a href="/navExplore/profiles/{{token }}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                  <li class="main__nav--list Logout"  id="more-option"><i class="fa fa-caret-down" id="moreoption" aria-hidden="true"></i>
+                  <div class="moreOption-list" >
+                <a href="/user/logout/{{token }}">Logout</a>
+                
+                  </div>
+                  
+                  </li>
+
+              </ul>
+            
+            </nav>
+            <!---------------------------navigation end--------------------- -->
+            </div>
+            
+            </header>
+<!------header end----------------------->
+
+<!---------------------------main-section start--------------------- -->
+
+  <main>
+      <section>
+          <div class="notification-container">
+            {{#if isNoti}}
+            {{#each notificationList}}
+            {{#if this.isFalse}}
+            <div class="notification-box"><!---------------------------notification-container start-------------------- -->
+
+                  <a href="../../viewAnswer/index.html" class="notification-box-container">
+                 <div class="notification-text">
+                     <h2>{{this.noti}}
+                     </h2>
+                 </div>
+                </a>
+                <div class="notification-content-more-option">
+                     <div class="more-option">
+                        <button class="option-anchor">
+                         <div class="cir-1"></div>
+                         <div class="cir-2"></div>
+                         <div class="cir-3"></div>
+                     </button>
+                    <div class="for-all-option" id="closeMoreOption">
+                        <div class="more-option-second-container">
+                          
+                        <a href="/deletenotification?noti={{this.noti}}" class="more-option-delete">delete</a>
+                    
+                    </div>
+                    </div>
+                     </div>
+                </div>
+            </div>
+              {{else}}
+           
+            {{/if}}
+            {{/each}}
+            {{else}}
+                     
+            <div class="notification-box"><!---------------------------notification-container start-------------------- -->
+
+                  <a style="width:100%" class="notification-box-container">
+                 <div class="notification-text">
+                     <h2 style="text-align:center">No Any Notification
+                     </h2>
+                 </div>
+                </a>
+                
+            </div>
+            {{/if}}
+            <!---------------------------notification-container end--------------------- -->
+
+        
+          </div>
+      </section>
+                  <!---------------------------notification-section start--------------------- -->
+
+  </main>
+    <!--------------------------main-section-end------------------------------->
+    
+    <!---------------------------javascript code--------------------- -->
+
+  <script src="/js/navExplore/notifications/index.js"></script>
+
+  <script src="/js/shared.js"></script>
+  
+</body>
+</html>

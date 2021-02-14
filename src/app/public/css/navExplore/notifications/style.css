@@ -1,0 +1,173 @@
+/*********************************************************************************************
+/*****************************notificaation rakheko container stat*********************************/
+/*********************************************************************************************/
+.notification-container
+{
+    height:auto;
+    width:100%;
+    
+   
+}
+/************************************notifaiction content*********************************************/
+.notification-box 
+{
+    background-color:#f6f6f6;
+    display:flex;
+    justify-content: space-between;
+    height:7rem;
+    width:80%;
+    margin:0 auto 2rem auto ;
+    border-radius: 0.85rem 0 0 0.85rem;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.3);
+    
+ 
+ }
+ .notification-box:first-of-type
+ {
+     margin-top:5rem;
+ }
+.notification-box-container
+{
+    width:97%;
+    height:100%;
+    text-decoration:none;
+    display:inline-block;
+    padding:0.9rem 0.7rem;
+    background-color: #F6F6F6;
+box-shadow:-4px -4px 6px #fff,4px 4px 6px #dcd6d6;
+}
+
+.notification-text h2{
+    letter-spacing: 0.09rem;
+  font-size:1.5rem;
+  color:#000;
+ padding-top:0.8rem;
+}
+.notification-content-more-option
+{
+    width:36px;
+    height:100%;
+  
+   text-align: right;
+   padding:1rem 1rem 0 0;
+
+   box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+
+   background-color: #F6F6F6;
+   box-shadow:-3px -3px 6px #fff,3px 3px 6px #dcd6d6;
+
+   
+}
+.notification-box-link
+{
+    display:block;
+    width:100%;
+    height:100%;
+    text-decoration: none;
+}
+/*******************************************************more option container****************************/
+.more-option
+{
+position:relative;
+}
+.for-all-option
+{
+    position: absolute;
+    top: 3rem;
+    left: 0rem;
+    width: 8rem;
+    height: auto;
+    background-color: rgba(112, 112, 112, 0.884);
+    transition: .5s;
+    display: none;
+}
+
+.more-option-second-container
+{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    width:100%;
+}
+.more-option-active
+{
+    display:inline-block;
+}
+.for-all-option a
+{
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    text-align: center;
+
+}
+.for-all-option::after
+{
+    position: absolute;
+    top: -1rem;
+    left: 7px;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    border-left: 1px solid rgb(112, 112, 112);
+    border-top: 1px solid rgb(112, 112, 112);
+    transform: rotateZ(46deg);
+    background-color: #808080;
+}
+.option-anchor
+{
+    text-decoration:none;
+    border:none;
+    background-color: #F6F6F6;
+    box-shadow:-3px -3px 6px #fff,3px 3px 6px #dcd6d6;
+    outline:none;
+    cursor: pointer;
+    width:35px;
+    height: 15px;
+  
+}
+.option-anchor:hover
+{
+    box-shadow:inset -3px -3px 6px #fff,inset 3px 3px 6px #dcd6d6;
+}
+
+
+.cir-1,
+.cir-2,
+.cir-3
+{
+    display: inline-block;
+    width:5px;
+    height:5px;
+    margin:0;
+    padding:0;
+    border:1px solid rgba(0,0,0,0.8);
+    border-radius:50px;
+    
+
+
+}
+/*********************************************************************************************
+/*****************************notificaation rakheko container end*********************************/
+/*********************************************************************************************/
+
+/********************************resopoinse design ********************/
+
+
+@media (max-width:600px)
+{
+    .notification-text h2
+{
+    font-size:1rem;
+}
+}
+@media (max-width:450px)
+{
+    .notification-text h2
+{
+    font-size:0.9rem;
+}
+
+}

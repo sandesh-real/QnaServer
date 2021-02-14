@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="../../icon/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/navExplore/YourQuestion/style.css">
+    <title>YourQuestion</title>
+</head>
+<body>
+    
+        <!---------------------------header start--------------------- -->
+
+        <header class="header-section">
+            <!---------------------------quesiton pupof menu_--------------------- -->
+      
+         
+          <!-- other website content -->
+          <!-- navigaiton menu top browser -->
+          <div class="nav-info">
+                      <!---------------------------logo or brand_--------------------- -->
+      
+          <div class="main-logo-container"><a href="/"><img src="/images/html/logo.png" alt="QnA-logo"></a></div>
+      
+                 <!---------------------------nav bar ko buttons--------------------- -->
+      
+          <div class="btn-search-collection">
+                      <!---------------------------profiles button---------------- -->
+      
+              <a href="../profiles/{{>code }}" class="profile-button"><i class="fa fa-user" aria-hidden="true"></i>Profile Name</a>
+             <!---------------------------question search input_--------------------- -->
+              <input type="text" name="search-question" placeholder='search' class="question-search-box">
+      
+                      <!---------------------------add question btn_--------------------- -->
+              <a href="#" class="Add-question-button">Add Question<i class="fa fa-plus" aria-hidden="true"></i></a>
+      
+                      <!---------------------------responsive nav ko button start--------------------- -->
+              <div class="small-nav">
+                  <div class="small-internal">
+                  <div class="bar1"></div>
+                  <div class="bar2"></div>
+                  <div class="bar3"></div>
+              </div>
+           
+              </div>
+        <!---------------------------responsive nav ko button end--------------------- -->
+      
+          </div>
+         
+      </div>
+      <div class="nav-container">
+      <!---------------------------navigation start--------------------- -->
+      
+      
+      <nav class="main-navs">
+      
+      <ul class="main__nav--lists">
+          <li class="main__nav--list" ><a href="../../sub-main/{{>code }}" id="select"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+          <li class="main__nav--list"><a href="../recommendations/{{>code }}">Recommendation</a></li>
+          <li class="main__nav--list"><a href="../notifications/{{>code }}"><i class="fa fa-bell" aria-hidden="true" id="bell-notification"></i>Notification</a></li>
+          <li class="main__nav--list"><a href="./{{>code }}">Your Questions</a></li>
+      </ul>
+      
+      </nav>
+      <!---------------------------navigation end--------------------- -->
+      </div>
+      
+      </header>
+      <!------header end----------------------->
+      
+     <!--------------------------main-section start--------------------- -->
+
+  <main>
+              <!---------------------------seciton start--------------------- -->
+
+        <section class="ask-look-question"> 
+          
+            <div class="main-question-container">
+                
+                <h1 class="search-question-title">JAVA</h1><!-----section-title----------------------->
+                <div class="question-box">
+               <!------question-content start----------------------->
+               {{#each questions}}
+                    <div class="questions" id="questions">
+                        <div class="top-part">
+                        <p class="recommend-text">Question Added By You</p>
+                        <div class="more-option">
+                            <button class="option-anchor opt-1">
+                             <div class="cir-1"></div>
+                             <div class="cir-2"></div>
+                             <div class="cir-3"></div>
+                         </button>
+                        <div class="more-option-container-1 for-all-option" id="closeMoreOption">
+                            <div class="more-option-second-container">
+                            <a href="#">delete</a>
+                            <a href="#">report</a>
+                        </div>
+                        </div>
+                         </div>
+                        </div>
+                        <h1 class="question-text">{{this.title}}<a href="#" class="question-more-tag">(more)</a></h1>
+                        
+                        <div class="question-image">
+                            <img src="../../image/html/{3AA6A9A0-1738-4A0E-A8D3-E232218068D1}.png.jpg" alt="fsdfds" >
+    
+                        </div>
+                   
+                        <!----------------tag-show----------------------->
+                        <div class="small-detail">
+                            <p>Answered, Aug-4,2020</p>
+                            <div class="tags">
+                                <a href="#" class="first-tag">Java</a>
+                                <a href="#" class="second-tag">Programmin</a>
+                            </div>
+                        </div>
+                        <div class="answer-btn-container">
+                        <a href="../../viewAnswer/" class="answer-btn" style="text-align: center;">VIEW ANSWER</a>
+                    </div>
+                    </div>
+                    {{/each}}
+                   <!------question content end----------------------->
+                    
+              
+                    </div>
+            </div>
+
+        
+        </section>
+        <!------section-end----------------------->
+        
+  </main>
+  <!------main-sectino-end---------------------->
+  <footer></footer>
+<!--------------------javascript----------------------->
+  <script src="index.js"></script>
+</body>
+</html>

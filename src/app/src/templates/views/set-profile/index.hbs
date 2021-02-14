@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setProfile</title>
+    <link rel="stylesheet" href="/css/set-profile/style.css">
+</head>
+<body>
+        <!------header start----------------------->
+    <header>
+        <nav class="division-navbar"><!------division navbar----------------------->
+            <!------logo---------------------->
+            {{!-- <div class="main-logo-container"><a href="/"> <img src="/images/html/logo.png" alt="QnA-logo"></a></div>/ --}}
+            <div class="main-logo-container"><a href="/">QNA</a></div>
+        </nav>
+    </header>
+    <!------header end----------------------->
+    {{#if error}}<span class="error-message">{{error}}</span>{{else}}<span class="success-message">{{success}}</span>{{/if}}
+    <h1 class="profile-picture-title">Choose profile picture</h1>
+    <div class="outer-container">
+    <div class="profile-picture-container">
+        <div class="img-container">
+
+            <img src="http://localhost:3000/user/profile{{token}}" alt=""  class="profile-pic">
+        </div>
+        <div class="profile-change-btn-container">
+            <form action="/user/set/profilepicture{{token}}" method="post" enctype="multipart/form-data">
+                <label for="profile-btn"></label>
+               <input type="file" class="profile-option" name="profile" id="profile-btn">
+               <input type="submit" class="profile-change-btn" id="profile-change-btn" value="Change profile Picture">
+            </form>
+            <div class="skinandnext">
+                <a href="/sub-main{{token}}" id="profile-set" class="profile-set">Done</a>
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/js/set-profile/index.js"></script>
+</body>
+
+</html>

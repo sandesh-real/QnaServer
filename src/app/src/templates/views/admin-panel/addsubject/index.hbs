@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Subject</title>
+    <link rel="stylesheet" href="/css/admin-panel/shared.css">
+    <link rel="stylesheet" href="/css/admin-panel/addsubject/style.css">
+</head>
+<body>
+    <!-- header start -->
+    <header>
+        <!-- navigation-start -->
+        <nav>
+            <div class="nav-btn-container">
+                <div class="front-end-btn">
+                    <a href="../sub-main/index.html">Front</a>
+                </div>
+                <div class="admin-profile-information">
+                    <div class="admin-profile-information-container">
+                        <a href="#" class="admin-profile">Profile name</a>
+                    <div class="profile-drop-down">
+                        <ul class="admin-profile-information-lists">
+                            <li class="admin-profile-information-list">
+                                <a href="#">Setting</a>
+    
+                            </li>
+                            <li class="admin-profile-information-list">
+                                <a href="admin-login.html">logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+               
+               
+            </div>
+        <!-- </nav> navigation-end -->
+    </header>
+    <!------header end----------------------->
+<!------------------------------main-start------------------------------>
+<main>
+    <!------sidebar start----------------------->
+        <aside>
+            <div class="sidebar-for-admin">
+                <div class="dashboard-btn">
+                    <a href="/admin">Dashboard</a>
+                </div>
+                <div class="question-information sid-btn">
+                    <a href="../admin/questions/">questions</a>
+                </div>
+                 <div class="question-information sid-btn">
+                    <a href="/admin/addSubject">Add Subject</a>
+                </div>
+                  <div class="question-information sid-btn">
+                    <a href="../admin/addFaculty">Add Faculty</a>
+                </div>
+                 
+            </div>
+        </aside>
+        <!------sidebar end----------------------->
+        
+        <!------section start----------------------->
+        <section>
+           <div class="form-container">
+               <h1 class="addsubject-title">Add Subject</h1>
+                <form action="/addsubject" method="post" class="addsubjectForm">
+                    <div class="subjectName-container">
+                        <label for="name" class="subjectName-label">Name</label>
+                        <input type="text" class="subjectName-input" name="subjectname" autocomplete="off">
+                    </div>
+
+                      <div class="faculty-container">
+                        <label for="faculty" class="faculty-label">Year</label>
+                        <select name="faculty_name" id="faculty" class="faculty-input">
+                             {{#each faculty}}
+                            <option value="{{this.name}}">{{this.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                     <div class="sem-container">
+                        <label for="sem" class="sem-label">Sem</label>
+                        <select name="sem_name" id="sem_name" class="sem-input">
+                            {{#each sems}}
+                            <option value="">None</option>
+                            <option value="{{this.semname}}">{{this.semname}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                      <div class="year-container">
+                        <label for="year" class="year-label">Year</label>
+                        <select name="year_name" id="year_name" class="year-input">
+                             {{#each years}}
+                            <option value="{{this.name}}">{{this.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    
+                     <input type="submit" value="submit" class="faculty-btn">
+                </form>
+           </div>
+
+
+        </section>
+        <!------section end----------------------->
+    </main>
+    <!------main end----------------------->
+    <!------javascript----------------------->
+    <script src="admin.js"></script>
+</body>
+</html>

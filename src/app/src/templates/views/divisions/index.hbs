@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/icon/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/divisions/style.css">
+    <title>Division</title>
+</head>
+<body>
+    <!------header start----------------------->
+    <header>
+        <nav class="division-navbar"><!------division navbar----------------------->
+            <!------logo---------------------->
+            {{!-- <div class="main-logo-container"><a href="/"> <img src="/images/html/logo.png" alt="QnA-logo"></a></div> --}}
+            <div class="main-logo-container"><a href="../" style="text-decoration:none"><h1 style="font-size:3rem;text-decoration:none">QNA</h1></a></div>
+            
+        </nav>
+    </header>
+    <!------header end----------------------->
+
+    <!----------------------main-start----------------------->
+    <main>
+        <section class="division-section"><!------------------------section start----------------------->
+            <div class="heading">
+                <h1>SELECT YOUR DEVISION</h1><!-------------------------select-devision----------------------->
+            </div>
+           
+             {{#if sem}}
+            <div class="box-container">
+              
+                 
+          <div class="box-1 box">
+                <a href="/user/set/division{{token}}&sem=first&year=first"> First Sem</a>
+            </div>
+            <div class="box-2 box">
+                <a href="/user/set/division{{token}}&sem=second&year=first"> Second Sem</a>
+            </div>
+            <div class="box-3 box">
+                <a href="/user/set/division{{token}}&sem=third&year=second'"> Third Sem</a>
+            </div>
+            <div class="box-4 box">
+                <a href="/user/set/division{{token}}&sem=fourth&year=second"> Fourth Sem</a>
+            </div>
+            <div class="box-5 box">
+                <a href="/user/set/division{{token}}&sem=fifth&year=third"> Fifth Sem</a>
+            </div>
+            <div class="box-6 box">
+                <a href="/user/set/division{{token}}&sem=sixth&year=third"> Sixth Sem</a>
+            </div>
+            <div class="box-7 box">
+                <a href="/user/set/division{{token}}&sem=seventh&year=fourth"> Seven Sem</a>
+            </div>
+            <div class="box-8 box">
+                <a href="/user/set/division{{token}}&sem=eighth&year=fourth"> Eight Sem</a>
+            </div>
+        </div>
+    {{else}}
+     <div class="box-container">
+            <div class="box-1 box">
+              
+
+                <a href="/user/set/division{{token}}&sem=0&year=first"> First Year</a>
+            </div>
+            <div class="box-2 box">
+                <a href="/user/set/division{{token}}&sem=0&year=second"> Second Year</a>
+            </div>
+            <div class="box-3 box">
+                <a href="/user/set/division{{token}}&sem=0&year=third"> Third Year</a>
+            </div>
+            <div class="box-4 box">
+                <a href="/user/set/division{{token}}&sem=0&year=fourth"> Fourth Year</a>
+            </div>
+           
+        </div>
+    {{/if}}
+           
+        </section>
+        <!--------------------------secition  end----------------------->
+    </main>
+    <!---------------------main end----------------------->
+    <script src="/js/divisions/index.js"></script>
+<body>
+</html>
