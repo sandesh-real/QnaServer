@@ -119,7 +119,7 @@ router.post('/user/login',async (req,res)=>{
      
         
         const user=await User.findByCredentials(req.body.email,req.body.password);
-   
+        console.log(user);
         const token=await user.generateAuthToken();
 
         
@@ -269,7 +269,7 @@ router.post('/user/login',async (req,res)=>{
       })
   }
       catch(e){
-          res.status(400).send();
+         res.json({message:"invalid email/password"})
       }
 });
 
