@@ -10,7 +10,7 @@ router.get("/admin",async (req,res)=>{
     const faculty=await Faculty.find();
     const sems=await Sem.find();
     const years=await Years.find();
-    console.log('aaa')
+   
     res.json({
         faculty,sems,years
     })
@@ -60,7 +60,7 @@ router.post("/addfaculty",async (req,res)=>{
 router.post("/addsubject",async (req,res)=>{
    
     const subject=new Subject(req.body);
-    console.log(subject);
+   
     try{
         await subject.save();
         

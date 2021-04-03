@@ -119,7 +119,7 @@ router.post('/user/login',async (req,res)=>{
      
         
         const user=await User.findByCredentials(req.body.email,req.body.password);
-        console.log(user);
+       
         const token=await user.generateAuthToken();
 
         
@@ -213,7 +213,7 @@ router.post('/user/login',async (req,res)=>{
              var isAnswer=false;
          }
        
-          const { _id,title,user_id,createdAt,updatedAt }=item;
+          const { _id,title,user_id,createdAt,updatedAt,annonymity, }=item;
           let mintitle=minimizetitle.filter((min)=>{
               return min===title;
           });
@@ -222,7 +222,7 @@ router.post('/user/login',async (req,res)=>{
          
           if(mintitle.length>0)
           {
-              return {_id,title:mintitle,user_id,createdAt,updatedAt,isAnswer,userAvatar,username:userwithAvatar[0].username,isThisMyQuestionColl};
+              return {_id,title:mintitle,user_id,createdAt,annonymity,updatedAt,isAnswer,userAvatar,username:userwithAvatar[0].username,isThisMyQuestionColl};
 
           }
           
@@ -369,7 +369,7 @@ router.post('/homerefresh',auth,async (req,res)=>{
              var isAnswer=false;
          }
        
-          const { _id,title,user_id,createdAt,updatedAt }=item;
+          const { _id,title,user_id,createdAt,updatedAt,annonymity }=item;
           let mintitle=minimizetitle.filter((min)=>{
               return min===title;
           });
@@ -378,7 +378,7 @@ router.post('/homerefresh',auth,async (req,res)=>{
 
           if(mintitle.length>0)
           {
-              return {_id,title:mintitle,user_id,createdAt,updatedAt,isAnswer,userAvatar,username:userwithAvatar[0].username,isThisMyQuestionColl};
+              return {_id,title:mintitle,annonymity,user_id,createdAt,updatedAt,isAnswer,userAvatar,username:userwithAvatar[0].username,isThisMyQuestionColl};
 
           }
           
@@ -560,14 +560,14 @@ router.post("/user/set/profilepicture",upload.single('file'),async (req,res)=>{
              var isAnswer=false;
          }
            
-          const { _id,title,user_id,createdAt,updatedAt }=item;
+          const { _id,title,user_id,createdAt,updatedAt,annonymity }=item;
           let mintitle=minimizetitle.filter((min)=>{
               return min===title;
           });
          
           if(mintitle.length>0)
           {
-              return {_id,title:mintitle,user_id,createdAt,updatedAt,isAnswer,userAvatar,isThisMyQuestionColl};
+              return {_id,title:mintitle,user_id,annonymity,createdAt,updatedAt,isAnswer,userAvatar,isThisMyQuestionColl};
 
           }
           

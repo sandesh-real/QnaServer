@@ -17,7 +17,7 @@ router.post('/subjectQuestion',async (req,res)=>{
 
     
           const modifiedQuestion=  SubQuestion.map((question)=>{
-                const {_id,title,user_id,subject_id}=question;
+                const {_id,title,user_id,subject_id,annonymity}=question;
                 const AnswerForSubject=Answers.filter((answer)=>{
                     return answer. q_id.toString()===question._id.toString();
                 })
@@ -25,7 +25,7 @@ router.post('/subjectQuestion',async (req,res)=>{
                 {
                     isAnswer=true
                 }
-                return {_id,title,user_id,isAnswer,answrCount:AnswerForSubject.length};
+                return {_id,title,user_id,isAnswer,annonymity,answrCount:AnswerForSubject.length};
 
             })
           

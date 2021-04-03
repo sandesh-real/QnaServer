@@ -22,7 +22,6 @@ const User = require("../modles/user");
            
             const {_id,username,avatar}=otherUsersWithYourId[0];
             let userAvatar =`data:image/png;base64,${avatar.toString('base64')}`;
-            // console.log({username,message:noti.message,isLooked:noti.isLooked,otherUserId:noti.otheruser_id})
              return {id:noti._id,username,message:noti.message,isLooked:noti.isLooked,otherUserId:noti.othersuser_id,avatar:userAvatar}
         })
         const ascSelectedFriendNoti=[];

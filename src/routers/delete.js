@@ -55,7 +55,7 @@ router.post("/deleteAnswer",async (req,res)=>{
       notiData[0].notification_type='';
       notiData[0].save();
 
-      console.log(notiData[0]);
+     
     if(ansOne.length>0){
      
     ansOne.forEach(async (item)=>{

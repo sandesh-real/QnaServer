@@ -19,6 +19,11 @@ const questionSchema=new mongoose.Schema({
         required:true,
         ref:"Subject"
     },
+    annonymity:{
+        type:Boolean,
+        required:true,
+    },
+   
 },
 {
     timestamps:true

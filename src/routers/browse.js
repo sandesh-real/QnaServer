@@ -110,7 +110,7 @@ router.post('/',auth,async (req,res)=>{
            }
 
            
-            const { _id,title,user_id,createdAt,updatedAt }=item;
+            const { _id,title,user_id,createdAt,updatedAt,annonymity }=item;
            
             /*******************checking for delete*********** */
            if(user_id.toString()===req.user._id.toString())
@@ -135,7 +135,7 @@ router.post('/',auth,async (req,res)=>{
         
             if(mintitle.length>0)
             {
-                return {_id,title:mintitle,user_id,createdAt,updatedAt,isAnswer,usersAnswer};
+                return {_id,title:mintitle,user_id,createdAt,updatedAt,isAnswer,usersAnswe,annonymity};
 
             }
             
@@ -164,7 +164,7 @@ router.post('/',auth,async (req,res)=>{
             isSem=false;
         }
       
-      
+      console.log(questionArr)
         res.json({
        
             questions:questionArr,
@@ -399,11 +399,11 @@ router.post('/viewAnswer',auth,async (req,res)=>{
              
         });
         
-        moanswers=[{question:question.title,isEmpty:false,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id},answersColl]
+        moanswers=[{question:question.title,annonymity:question.annonymity,isEmpty:false,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id},answersColl]
        
     }
     else{
-        moanswers=[{question:question.title,isEmpty:true,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id}];
+        moanswers=[{question:question.title,annonymity:question.annonymity,isEmpty:true,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id}];
 
     }
 

@@ -20,6 +20,7 @@ const questionRouter=require("./routers/question");
 const yearRouter=require("./routers/year");
 const semRouter=require("./routers/sem");
 const likeRouter=require("./routers/likes");
+const voteRouter=require("./routers/votes")
 const commentRouter=require("./routers/comment");
 const subcommentRouter=require("./routers/subcomment");
 const tagRouter=require("./routers/tag");
@@ -65,7 +66,7 @@ app.use(deleteRouter);
 app.use(friendRequestRouter)
 app.use(addFriendNotificaiton);
 app.use(subjectQuestion);
-
+app.use(voteRouter);
 
 app.listen(3000,()=>{
     console.log("server is up");

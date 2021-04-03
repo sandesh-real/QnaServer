@@ -9,7 +9,7 @@ router.post("/subcomment",auth,async (req,res)=>{
         comment_id:req.query.comment_id,
         user_id:req.user._id
     });
-    console.log(subcomment);
+   
     try{
         await subcomment.save();
         res.redirect("back");
