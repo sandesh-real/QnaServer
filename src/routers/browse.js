@@ -13,6 +13,8 @@ const UserSearch = require("../modles/usersearch");
 const fuzz = require('fuzzball');
 const Likes=require("../modles/likes");
 const Dislikes=require("../modles/dislikes");
+const ShowCreatedDate=require("../helperfunction");
+const { create } = require('../modles/question');
 
 
 router.get('/authpage',async (req,res)=>{
@@ -112,6 +114,8 @@ router.post('/',auth,async (req,res)=>{
            
             const { _id,title,user_id,createdAt,updatedAt,annonymity }=item;
            
+            let questionCreated= ShowCreatedDate(createdAt)
+
             /*******************checking for delete*********** */
            if(user_id.toString()===req.user._id.toString())
            {
@@ -132,10 +136,13 @@ router.post('/',auth,async (req,res)=>{
                 return min===title;
                 }
             });
+            //when question is created
+            
+           
         
             if(mintitle.length>0)
             {
-                return {_id,title:mintitle,user_id,createdAt,updatedAt,isAnswer,usersAnswe,annonymity};
+                return {_id,title:mintitle,user_id,createdAt,questionCreated:questionCreated,updatedAt,isAnswer,usersAnswe,annonymity};
 
             }
             
@@ -164,7 +171,7 @@ router.post('/',auth,async (req,res)=>{
             isSem=false;
         }
       
-      console.log(questionArr)
+      
         res.json({
        
             questions:questionArr,
@@ -217,8 +224,11 @@ router.get('/navExplore/subject/',auth,async (req,res)=>{
             else{
                 var isAnswer=false;
             }
-            const {_id,title,user_id}=item;
+            const {_id,title,user_id,createdAt}=item;
+            
+
                /*******************checking for delete*********** */
+            
            if(user_id.toString()===req.user._id.toString())
            {
                var usersAnswer=true;
@@ -340,7 +350,8 @@ router.post('/viewAnswer',auth,async (req,res)=>{
             }
         }
         let userQuestionAvatar=`data:image/png;base64,${userWithQuestion[0].avatar.toString('base64')}`;
-        
+        let questionCreated=  ShowCreatedDate(question.createdAt);
+            
         if(answers.length>0)
         {
        
@@ -399,11 +410,11 @@ router.post('/viewAnswer',auth,async (req,res)=>{
              
         });
         
-        moanswers=[{question:question.title,annonymity:question.annonymity,isEmpty:false,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id},answersColl]
+        moanswers=[{question:question.title,questionCreated:questionCreated,annonymity:question.annonymity,isEmpty:false,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id},answersColl]
        
     }
     else{
-        moanswers=[{question:question.title,annonymity:question.annonymity,isEmpty:true,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id}];
+        moanswers=[{question:question.title,questionCreated:questionCreated,annonymity:question.annonymity,isEmpty:true,questionAvatar:userQuestionAvatar,username:userWithQuestion[0].username,user_id:userWithQuestion[0]._id}];
 
     }
 

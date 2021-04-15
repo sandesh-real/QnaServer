@@ -70,7 +70,7 @@ router.post('/voteChange',auth,async (req,res)=>{
 }
 catch(e)
 {
-console.log(e);
+
 }
 });
 
@@ -78,7 +78,7 @@ router.get("/getVotes",auth,async (req,res)=>{
 try{
     
 let votes=await Votes.find({question_id:req.query.q_id});
-console.log(votes);
+
 res.json({votes:votes[0].counts,userVote:votes[0].useCollection})
 }
 catch(e)

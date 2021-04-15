@@ -51,6 +51,5 @@ router.post('/question/create',auth,async (req,res)=>{
 });
 
 
-router.get('/questions')
 
 module.exports=router;
